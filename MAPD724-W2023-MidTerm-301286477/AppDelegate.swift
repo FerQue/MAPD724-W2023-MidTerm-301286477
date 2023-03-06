@@ -1,9 +1,7 @@
-//
-//  AppDelegate.swift
-//  MAPD724-W2023-ICE-4B
-//
-//  Created by Tom Tsiliopoulos on 2023-02-08.
-//
+//MAPD724 - Advanced iOS Development
+//Midterm Test
+//Modify Mail Pilot
+//Victor Quezada - 301286477
 
 import UIKit
 
