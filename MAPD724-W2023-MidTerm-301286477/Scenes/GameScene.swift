@@ -2,6 +2,9 @@
 //Midterm Test
 //Modify Mail Pilot
 //Victor Quezada - 301286477
+//Sunday, March 05, 2023
+// This is a Mail pilot demo project, developed with Swift Programming Language,
+//SpriteKit and Xcode.
 
 import SpriteKit
 import GameplayKit
