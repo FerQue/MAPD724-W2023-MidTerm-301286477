@@ -36,7 +36,7 @@ class GameScene: SKScene
         addChild(island!)
         
         
-        for _ in 0...1
+        for _ in 0...4
         {
             let cloud = Cloud()
             clouds.append(cloud)
