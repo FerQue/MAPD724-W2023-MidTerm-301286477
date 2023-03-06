@@ -6,7 +6,7 @@ import UIKit
 class GameScene: SKScene
 {
     var ocean1: Ocean?
-    var ocean2: Ocean?
+    //var ocean2: Ocean?
     var player: Player?
     var island: Island?
     var clouds : [Cloud] = []
@@ -15,24 +15,32 @@ class GameScene: SKScene
     {
         name = "GAME"
         
+        self.scene?.size.height = CGFloat(750.0)
+        self.scene?.size.width = CGFloat(1626.0)
+        
         ocean1 = Ocean()
         ocean1?.Reset()
+        ocean1?.zRotation = -Double.pi/2
         addChild(ocean1!)
         
-        ocean2 = Ocean()
-        ocean2?.position.y = -627
-        addChild(ocean2!)
+//        ocean2 = Ocean()
+//        ocean2?.position.y = -627
+//        addChild(ocean2!)
         
         player = Player()
+        player?.zRotation = -Double.pi/2
         addChild(player!)
         
         island = Island()
+        island?.zRotation = -Double.pi/2
         addChild(island!)
         
-        for _ in 0...2
+        
+        for _ in 0...1
         {
             let cloud = Cloud()
             clouds.append(cloud)
+            island?.zRotation = -Double.pi/2
             addChild(cloud)
         }
         
@@ -61,19 +69,20 @@ class GameScene: SKScene
     
     func touchDown(atPoint pos : CGPoint)
     {
-        player?.TouchMove(newPos: CGPoint(x: pos.x, y: -640))
+        player?.TouchMove(newPos: CGPoint(x: -640, y: pos.y))
+        //player?.TouchMove(newPos: CGPoint(x: pos.x, y: -640))
     }
     
     func touchMoved(toPoint pos : CGPoint)
     {
-        player?.TouchMove(newPos: CGPoint(x: pos.x, y: -640))
-        
+        player?.TouchMove(newPos: CGPoint(x: -640, y: pos.y))
+        //player?.TouchMove(newPos: CGPoint(x: pos.x, y: -640))
     }
     
     func touchUp(atPoint pos : CGPoint)
     {
-        player?.TouchMove(newPos: CGPoint(x: pos.x, y: -640))
-        
+        player?.TouchMove(newPos: CGPoint(x: -640, y: pos.y))
+        //player?.TouchMove(newPos: CGPoint(x: pos.x, y: -640))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -98,7 +107,7 @@ class GameScene: SKScene
     override func update(_ currentTime: TimeInterval)
     {
         ocean1?.Update()
-        ocean2?.Update()
+        //ocean2?.Update()
         player?.Update()
         island?.Update()
         
@@ -111,4 +120,12 @@ class GameScene: SKScene
         }
         
     }
+    
+//    override func didMove[to view: SKView]
+//    {
+//        Player?.position = CGPoint(x: 300, y: 300)
+//        Player?.setScale(0.25)
+//        Player?.zRotation = CGFloat(-M_PI_2)
+//        addChild(Player)
+//    }
 }

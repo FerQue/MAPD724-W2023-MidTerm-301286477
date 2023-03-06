@@ -6,7 +6,7 @@ import UIKit
 class EndScene: SKScene
 {
     var ocean1: Ocean?
-    var ocean2: Ocean?
+    //var ocean2: Ocean?
     
     override func sceneDidLoad()
     {
@@ -14,11 +14,12 @@ class EndScene: SKScene
         
         ocean1 = Ocean()
         ocean1?.Reset()
+        ocean1?.zPosition = 90
         addChild(ocean1!)
         
-        ocean2 = Ocean()
-        ocean2?.position.y = -627
-        addChild(ocean2!)
+//        ocean2 = Ocean()
+//        ocean2?.position.y = -627
+//        addChild(ocean2!)
     }
     
     func touchDown(atPoint pos : CGPoint)
@@ -55,6 +56,6 @@ class EndScene: SKScene
     override func update(_ currentTime: TimeInterval)
     {
         ocean1?.Update()
-        ocean2?.Update()
+//        ocean2?.Update()
     }
 }

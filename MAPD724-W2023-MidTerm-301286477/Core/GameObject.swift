@@ -54,6 +54,6 @@ class GameObject : SKSpriteNode, GameProtocol
     
     func Reset()
     {
-        
+        position.x = -640
     }
 }

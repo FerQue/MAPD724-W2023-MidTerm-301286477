@@ -31,7 +31,7 @@ class Island : GameObject
     
     override func CheckBounds()
     {
-        if(position.y <= -876)
+        if(position.x <= -627)
         {
             Reset()
         }
@@ -39,7 +39,7 @@ class Island : GameObject
     
     override func Reset()
     {
-        position.y = 876
+        position.x = 627
         // get a pseudo random number
         let randomX:Int = (randomSource?.nextInt(upperBound: 626))! - 313
         position.x = CGFloat(randomX)
@@ -49,6 +49,6 @@ class Island : GameObject
     // public method
     func Move()
     {
-        position.y -= verticalSpeed!
+        position.x -= verticalSpeed!
     }
 }
